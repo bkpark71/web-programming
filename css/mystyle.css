@@ -23,6 +23,13 @@ tr:hover {
 tr:nth-child(even) {
     background-color: white;
 }
-tr:nth-child(odd) {
+/* tr:nth-child(odd) {
     background-color: gray;
+} */
+table {
+    border-collapse: collapse;
+    border : 1px solid blue;
+}
+th,td {
+    border : 1px dotted green;
 }
