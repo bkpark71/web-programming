@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>폼 요소의 값 제어하기</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script>
+      function copyValues(obj) {
+        console.log(obj.checked)
+        if(obj.checked) {
+          let name = document.order.name.value;
+          let phone = document.order.phone.value;
+          let address = document.order.address.value;
+          console.log(`${name} + ${phone} + ${address}`)
+          document.delivery.name.value = name;
+          document.delivery.phone.value = phone;
+          document.delivery.address.value = address;
+        } else {
+          document.delivery.name.value = "";
+          document.delivery.phone.value = "";
+          document.delivery.address.value = "";
+          document.delivery.name.focus();
+        }
+      }
+    </script>
+</head>
+<body>
+    <h3>주문/배송정보 등록</h3>
+    <form action="" name="order">
+      <input type="text" name="name">
+      <input type="tel" name="phone">
+      <input type="address" name="address">
+    </form>
+
+    <input id="copy" type="checkbox" name="copy" onchange = "copyValues(this)">
+    <label for="copy">주문자의 정보와 동일하면 체크하세요.</label>
+
+    <form action="" name="delivery">
+      <input type="text" name="name">
+      <input type="tel" name="phone">
+      <input type="address" name="address">
+      <button onclick="addList(event)">추가</button>
+    </form>
+    <hr>
+    <ul id="list"></ul>
+</body>
+</html>
