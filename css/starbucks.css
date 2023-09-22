@@ -8,6 +8,7 @@
 
 body {
     height : 2000px;
+    margin : 0px;
 }
 
 #favImg {
@@ -15,8 +16,9 @@ body {
     right : 200px;
     top:100px;
 }
-.favText {
+.fav-text {
     color : white;
+    animation : slide-forward 2s ease-in-out ;
 }
 
 .bg-text {
@@ -38,4 +40,28 @@ body {
     position:absolute;
     left:450px;
     top:430px;
+}
+
+@keyframes slide-forward {
+    from {
+        left:-300px;
+        opacity: 0;
+    }
+    to {
+        left:450px;
+        opacity: 1;
+    }
+}
+
+
+@keyframes slide-backward {
+    from {
+        left:450px;
+        opacity: 1;
+    }
+    to {
+        left:-300px;
+        opacity: 0;
+    }
+   
 }
